@@ -9,8 +9,9 @@ ggplot(data, aes(x = Fuel.Consumption.City..L.100.km., y = CO2.Emissions.g.km., 
     geom_point() +
     geom_smooth(method = "lm", col = "red") +
     labs(
-        title = "Regression of CO2 emmission on Clyinders",
-        x = "No of Cylinders",
+        title = "Regression of CO2 emmission on Fuel consumption",
+        x = "Fuel Consumption City (L/100 km)",
         y = "Co2 Emmisions"
     ) +
-    theme_classic()
+    theme_classic() +
+    theme(plot.title = element_text(hjust = 0.5))

@@ -4,8 +4,8 @@ data <- read.csv("./co2.csv")
 head(data)
 model <- lm(data$CO2.Emissions.g.km. ~ data$Cylinders)
 model
-
-ggplot(data, aes(x = Cylinders, y = CO2.Emissions.g.km.)) +
+data$Fuel.Consumption.City..L.100.km.
+ggplot(data, aes(x = Fuel.Consumption.City..L.100.km., y = CO2.Emissions.g.km., color = Cylinders)) +
     geom_point() +
     geom_smooth(method = "lm", col = "red") +
     labs(
@@ -13,4 +13,4 @@ ggplot(data, aes(x = Cylinders, y = CO2.Emissions.g.km.)) +
         x = "No of Cylinders",
         y = "Co2 Emmisions"
     ) +
-    theme_minimal()
+    theme_classic()
